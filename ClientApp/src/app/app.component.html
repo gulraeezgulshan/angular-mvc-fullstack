@@ -1,8 +1,38 @@
-<div class="p-2">
+<div style="display:none" class="p-2">
   <table class="table table-sm">
-    <tr><th>Name</th><td>{{product?.name}}</td></tr>
-    <tr><th>Category</th><td>{{product?.category}}</td></tr>
-    <tr><th>Description</th><td>{{product?.description}}</td></tr>
-    <tr><th>Price</th><td>{{product?.price}}</td></tr>
+    <tr><th colspan="2" class="bg-info">Product</th></tr>
+    <tr><th>Name</th><td>{{product?.name || 'Loading Data...'}}</td></tr>
+    <tr><th>Category</th><td>{{product?.category || 'Loading Data...'}}</td></tr>
+    <tr>
+      <th>Description</th>
+      <td>{{product?.description || 'Loading Data...'}}</td>
+    </tr>
+    <tr><th>Price</th><td>{{product?.price || 'Loading Data...'}}</td></tr>
+    <tr><th colspan="2" class="bg-info">Supplier</th></tr>
+    <tr><th>Name</th><td>{{product?.supplier?.name}}</td></tr>
+    <tr><th>City</th><td>{{product?.supplier?.city}}</td></tr>
+    <tr><th>State</th><td>{{product?.supplier?.state}}</td></tr>
+    <tr><th>Products</th><td>{{product?.supplier?.products?.length}}</td></tr>
+  </table>
+</div>
+
+<div class="p-2">
+  <table class="table table-sm table-striped">
+    <tbody>
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Supplier</th>
+        <th>Ratings</th>
+      </tr>
+      <tr *ngFor="let product of products">
+        <td>{{product.name}}</td>
+        <td>{{product.category}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.supplier?.name || 'None'}}</td>
+        <td>{{product.ratings?.length || 0}}</td>
+      </tr>
+    </tbody>
   </table>
 </div>
