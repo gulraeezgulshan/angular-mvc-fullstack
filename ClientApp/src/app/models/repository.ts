@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { Filter } from './configClasses.repository';
 import { Supplier } from './supplier.model';
 
-const productsUrl = "/api/products";
+const productsUrl = "/api/products/rel";
 const suppliersUrl = "/api/suppliers";
 
 @Injectable()
