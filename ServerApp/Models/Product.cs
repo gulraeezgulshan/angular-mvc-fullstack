@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using ServerApp.Data;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ServerApp.Models
 {
-    public class Product
+    public class Product : IEntity
     {
-        public long ProductId { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public string Category { get; set; }
         public string Description { get; set; }

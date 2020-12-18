@@ -1,8 +1,10 @@
-﻿namespace ServerApp.Models
+﻿using ServerApp.Data;
+
+namespace ServerApp.Models
 {
-    public class Rating
+    public class Rating : IEntity
     {
-        public long RatingId { get; set; }
+        public long Id { get; set; }
         public int Stars { get; set; }
         public Product Product { get; set; }
     }
